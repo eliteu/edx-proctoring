@@ -1,0 +1,60 @@
+{% extends 'practice_exam/submitted.html' %}
+{% load i18n %}
+{% block title %}
+  {% blocktrans %}
+    You have submitted this onboarding exam
+  {% endblocktrans %}
+{% endblock %}
+
+{% block body %}
+  <p>
+    {% blocktrans %}
+      If you do not have an onboarding profile with the system,
+      Verificient will review your submission and create an onboarding
+      profile to grant you access to proctored exams. Onboarding
+      profile review can take 2+ business days.
+    {% endblocktrans %}
+  </p>
+  <p>
+    {% blocktrans %}
+      Once your profile has been reviewed, you will receive an email
+      with review results. The email will come from
+      <a href="mailto:{{ learner_notification_from_email }}">
+        {{ learner_notification_from_email }}
+      </a>,
+      so make sure this email has been added to your inbox filter.
+    {% endblocktrans %}
+  </p>
+  <p>
+    {% blocktrans %}
+      If you already have an onboarding profile approved through another course,
+      this submission will not be reviewed. You may retry this exam at any time
+      to validate that your setup still meets the requirements for proctoring.
+    {% endblocktrans %}
+  </p>
+  <p>
+    {% blocktrans %}
+      If you have made an error in this submission you may restart the onboarding process. 
+      Your current submission will be removed and will not receive a review.
+    {% endblocktrans %}
+    </br>
+    {% trans "I understand and want to reset this onboarding exam." as retry_confirm %}
+    <button type="button" class="btn btn-link exam-action-confirm" data-cta-text="{{ retry_confirm }}">
+      {{ retry_confirm }}
+    </button>
+  </p>
+  <p>
+    {% trans "Retry my exam" as retry_exam %}
+    <button type="button" class="exam-action-button proctored-reset-onboarding btn btn-pl-primary btn-base" disabled data-action="reset_attempt" data-exam-id="{{exam_id}}" data-change-state-url="{{change_state_url}}" data-cta-text="{{ retry_exam }}">
+      {{ retry_exam }}
+    </button>
+  </p>
+  <p>
+    {% blocktrans %}
+      Please contact
+      <a href="mailto:{{ integration_specific_email }}">
+        {{ integration_specific_email }}
+      </a> if you have questions.
+    {% endblocktrans %}
+  </p>
+{% endblock %}

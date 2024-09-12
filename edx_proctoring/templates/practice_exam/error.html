@@ -1,0 +1,42 @@
+{% load i18n %}
+<div class="failure sequence proctored-exam" data-exam-id="{{exam_id}}">
+  <h3>
+    {% block title %}
+      {% blocktrans %}
+        There was a problem with your practice proctoring session
+      {% endblocktrans %}
+    {% endblock %}
+  </h3>
+
+  {% block secondary_heading %}
+  <h4>
+    {% blocktrans %}
+      Your practice proctoring results: <b class="failure"> Unsatisfactory </b>
+    {% endblocktrans %}
+  </h4>
+  {% endblock %}
+
+  <p>
+    {% block body_text %}
+      {% blocktrans %}
+        Your proctoring session ended before you completed this practice exam.
+        You can retry this practice exam if you had problems setting up the online proctoring software.
+      {% endblocktrans %}
+    {% endblock %}
+  </p>
+  <hr>
+  <div>
+    {% trans "Retry my exam" as retry_exam %}
+    <button type="button" class="exam-action-button proctored-reset-onboarding btn btn-pl-primary btn-base" data-action="reset_attempt" data-exam-id="{{exam_id}}" data-change-state-url="{{change_state_url}}" data-loading-text="<span class='fa fa-circle-o-notch fa-spin'></span> {% trans 'Resetting Onboarding Exam' %}" data-cta-text="{{ retry_exam }}">
+      {{ retry_exam }}
+    </button>
+  </div>
+
+</div>
+{% include 'proctored_exam/footer.html' %}
+<script type="text/javascript">
+  $('.exam-action-button').click(
+    edx.courseware.proctored_exam.updateStatusHandler
+  );
+</script>
+

@@ -1,0 +1,46 @@
+<div class="proctoring-info">
+    <h3 class="message-title"> <%= gettext("This course contains proctored exams") %></h3>
+    <% if (onboardingStatusText) { %>
+        <div class="onboarding-status">
+            <span class="onboarding-status"><%= gettext("Current Onboarding Status:") %> <%= onboardingStatusText %></span>
+        </div>
+        <div class="onboarding-status-message">
+            <span class="onboarding-status-message"><%= onboardingMessage %></span>
+        </div>
+        <% if (onboardingDetail) { %>
+            <div class="onboarding-status-detail">
+                <span class="onboarding-status-detail"><%= onboardingDetail %></span>
+            </div>
+        <%} %>
+    <%} %>
+    <div class="onboarding-reminder">
+    <% if (showOnboardingReminder) { %>
+        <h4 class="message-title">
+            <% if (showOnboardingExamLink) { %>
+                <%= gettext("You must have a verified onboarding profile prior to taking any proctored exam.") %>
+            <% } else { %>
+                <%= gettext("You have successfully submitted your onboarding profile for review.") %>
+            <%} %>
+        </h4>
+        <p class="message-copy">
+            <%= gettext("Onboarding profile review can take 2+ business days.") %>
+        </p>
+    <%} %>
+    </div>
+    <% if (showOnboardingExamLink) { %>
+        <% if (onboardingPastDue) { %>
+            <a class="action action-onboarding action-disabled"><%= gettext("Onboarding Past Due") %></a>
+        <% } else if (onboardingNotReleased) { %>
+            <a class="action action-onboarding action-disabled"><%= gettext("Onboarding Opens") %> <%= onboardingReleaseDate %></a>
+        <%} else if (onboardingStatus && onboardingStatus === 'other_course_approved') { %>
+            <a href="<%= onboardingLink %>" class="action action-onboarding-practice"><%= gettext("View Onboarding Exam") %></a>
+        <%} else { %>
+            <a href="<%= onboardingLink %>" class="action action-onboarding"><%= gettext("Complete Onboarding") %></a>
+        <%} %>
+    <%} %>
+    <% if (reviewRequirementsUrl) { %>
+        <a href="<%= reviewRequirementsUrl %>" class="action action-info-link"><%= gettext("Review instructions and system requirements for proctored exams") %></a>
+    <%} else { %>
+        <a href="https://support.edx.org/hc/en-us/articles/207249428-How-do-proctored-exams-work" class="action action-info-link"><%= gettext("Review instructions and system requirements for proctored exams") %></a>
+    <%} %>
+</div>

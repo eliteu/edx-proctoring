@@ -1,0 +1,69 @@
+# Python bytecode:
+*.py[co]
+
+# Packaging files:
+*.eggs
+
+# Installation artifacts
+src
+
+# Sphinx docs:
+build
+
+# SQLite3 database files:
+*.db
+*.sqlite
+
+# Logs:
+*.log
+
+# Eclipse
+.project
+.pydevproject
+.settings
+
+# pycharm
+.idea/
+
+# Linux Editors
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+.\#*
+*.swp
+*.swo
+
+# VS Code
+.vscode
+
+# Mac
+.DS_Store
+._*
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Test Artifacts
+.coverage
+coverage.xml
+reports/
+coverage/
+htmlcov/
+.cache/
+.tox/
+acceptance_tests/*.png
+
+node_modules/
+
+# Devstack
+edx-proctoring
+edx_proctoring.egg-info
+proctoring-env
+
+# Output of pii annotations checker
+pii_report

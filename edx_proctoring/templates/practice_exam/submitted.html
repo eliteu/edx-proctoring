@@ -1,0 +1,31 @@
+{% load i18n %}
+<div class="sequence proctored-exam completed" data-exam-id="{{exam_id}}">
+  <h3>
+    {% block title %}
+      {% blocktrans %}
+        You have submitted this practice proctored exam
+      {% endblocktrans %}
+    {% endblock %}
+  </h3>
+
+  {% block body %}
+    <p>
+      {% blocktrans %}
+        Practice exams do not affect your grade.
+        You have completed this practice exam and can continue with your course work.
+      {% endblocktrans %}
+    </p>
+    {% trans "Retry my exam" as retry_exam %}
+    <button type="button" class="exam-action-button proctored-reset-onboarding btn btn-pl-primary btn-base" data-action="reset_attempt" data-exam-id="{{exam_id}}" data-change-state-url="{{change_state_url}}" data-loading-text="<span class='fa fa-circle-o-notch fa-spin'></span> {% trans 'Resetting Onboarding Exam' %}" data-cta-text="{{ retry_exam }}">
+      {{ retry_exam }}
+    </button>
+  {% endblock %}
+</div>
+<script type="text/javascript">
+  $('.exam-action-confirm').click(function(event, ele) {
+    $('.exam-action-button').prop('disabled', false);
+  });
+  $('.exam-action-button').click(
+      edx.courseware.proctored_exam.updateStatusHandler
+  );
+</script>

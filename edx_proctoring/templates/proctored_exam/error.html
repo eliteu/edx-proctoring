@@ -1,0 +1,26 @@
+{% load i18n %}
+<div class="failure sequence proctored-exam" data-exam-id="{{exam_id}}">
+  <h3>
+    {% blocktrans %}
+      Error with proctored exam
+    {% endblocktrans %}
+  </h3>
+
+<p>
+  {% if proctoring_escalation_email %}
+      {% blocktrans %}
+        A system error has occurred with your proctored exam. Please reach out to your course 
+        team at <a href="mailto:{{proctoring_escalation_email}}">{{proctoring_escalation_email}}</a> 
+        for assistance, and return to the exam once you receive further instructions.
+      {% endblocktrans %}
+  {% else %}
+      {% blocktrans %}
+        A system error has occurred with your proctored exam. Please reach out to 
+        <a href="{{link_urls.contact_us}}" target="_blank">{{platform_name}} Support</a> for 
+        assistance, and return to the exam once you receive further instructions.
+      {% endblocktrans %}
+  {% endif %}
+</p>
+
+</div>
+{% include 'proctored_exam/footer.html' %}
