@@ -1,10 +1,10 @@
-<div class='modal-header'><%- gettext("Edit Allowance") %></div>
+<div class='modal-header'><%- gettext("编辑额外时间") %></div>
 <form>
     <h3 class='error-response'><h3>
     <table class='compact'>
         <tr>
             <td>
-                <label><%- gettext("Username") %></label>
+                <label><%- gettext("用户名") %></label>
             </td>
             <td>
                 <label> <%= selected_user %> </label>
@@ -12,7 +12,7 @@
         </tr>
         <tr>
             <td>
-                <label><%- gettext("Special Exam") %></label>
+                <label><%- gettext("特殊考试") %></label>
             </td>
             <td>
                 <label>
@@ -22,7 +22,7 @@
         </tr>
         <tr>
             <td>
-                <label><%- gettext("Allowance Type") %></label>
+                <label><%- gettext("额外时间类型") %></label>
             </td>
             <td>
                 <label>
@@ -33,9 +33,9 @@
         <tr>
             <td>
                 <% if (allowance_type == 'additional_time_granted') { %>
-                    <label id='allowance_value_label'><%- gettext("Add Time(Minutes)") %></label>
+                    <label id='allowance_value_label'><%- gettext("添加时间（分钟）") %></label>
                 <% }else{ %>
-                    <label id='allowance_value_label'><%- gettext("Add Policy Exception") %></label>
+                    <label id='allowance_value_label'><%- gettext("添加政策例外") %></label>
                 <% } %>
             </td>
             <td>

@@ -9,13 +9,13 @@
         width: 100%;
     }
 </style>
-<div class='modal-header'><%- gettext("Add a New Allowance") %></div>
+<div class='modal-header'><%- gettext("新增额外时间") %></div>
 <form>
     <h3 class='error-response'><h3>
     <table class='compact'>
         <tr>
             <td>
-                <label><%- gettext("Add Usernames or Emails seperated by commas") %></label>
+                <label><%- gettext("添加用户名或电子邮件（用逗号分隔）") %></label>
             </td>
         </tr>
         <tr>
@@ -25,30 +25,30 @@
         </tr>
         <tr>
             <td>
-                <label><%- gettext("Select Exam Type") %></label>
+                <label><%- gettext("选择考试类型") %></label>
             </td>
         </tr>
         <tr>
             <td>
                 <select id="exam_type">
                     <option value="proctored_exam">
-                        <%- gettext("Proctored Exam") %>
+                        <%- gettext("监考考试") %>
                     </option>
                     <option value="timed_exam">
-                        <%- gettext("Timed Exam") %>
+                        <%- gettext("计时考试") %>
                     </option>
                 </select>
             </td>
         </tr>
         <tr>
             <td>
-                <label><%- gettext("Select Exams") %></label>
+                <label><%- gettext("选择考试") %></label>
             </td>
         </tr>
         <tr>
             <td>
                 <select multiple id='proctored_exam' class="exam_dropdown">
-                    <option hidden selected value=default> <%- gettext("Choose Exams Below") %> </option>
+                    <option hidden selected value=default> <%- gettext("选择以下考试") %> </option>
                     <% _.each(proctored_exams, function(proctored_exam){ %>
                     <option value="<%= proctored_exam.id  %>">
                     <%- interpolate(gettext(' %(exam_display_name)s '), { exam_display_name: proctored_exam.exam_name }, true) %>
@@ -72,7 +72,7 @@
         </tr>
         <tr>
             <td>
-                <label><%- gettext("Allowance Type") %></label>
+                <label><%- gettext("额外时间类型") %></label>
             </td>
         </tr>
         <tr>
@@ -88,7 +88,7 @@
         </tr>
         <tr>
             <td>
-                <label id='allowance_value_label'><%- gettext("Add Time(Minutes)") %></label>
+                <label id='allowance_value_label'><%- gettext("添加时间（分钟）") %></label>
             </td>
         </tr>
         <tr>

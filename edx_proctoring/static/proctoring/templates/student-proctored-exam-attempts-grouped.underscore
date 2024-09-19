@@ -72,7 +72,7 @@
                         <div aria-live="polite" aria-relevant="all">
                             <div id="attempt-loading-indicator" class="hidden">
                               <span class="icon fa fa-spinner fa-pulse" aria-hidden="true"></span>
-                              <span class="sr"><%- gettext("Loading") %></span>
+                              <span class="sr"><%- gettext("加载中") %></span>
                             </div>
                         </div>
                     </span>
@@ -147,15 +147,15 @@
                 <thead>
                     <tr class="exam-attempt-headings">
                         <th class="more"></th>
-                        <th class="username"><%- gettext("Username") %></th>
-                        <th class="exam-name"><%- gettext("Exam Name") %></th>
-                        <th class="attempt-allowed-time"><%- gettext("Time Limit") %> </th>
-                        <th class="attempt-type"><%- gettext("Type") %> </th>
-                        <th class="attempt-started-at"><%- gettext("Started At") %></th>
-                        <th class="attempt-completed-at"><%- gettext("Completed At") %> </th>
-                        <th class="attempt-status"><%- gettext("Status") %> </th>
-                        <th class="attempt-ready-to-resume"><%- gettext("Ready to Resume") %> </th>
-                        <th class="c_action"><%- gettext("Actions") %> </th>
+                        <th class="username"><%- gettext("用户名") %></th>
+                        <th class="exam-name"><%- gettext("考试名称") %></th>
+                        <th class="attempt-allowed-time"><%- gettext("时间限制") %> </th>
+                        <th class="attempt-type"><%- gettext("考试类型") %> </th>
+                        <th class="attempt-started-at"><%- gettext("开始时间") %></th>
+                        <th class="attempt-completed-at"><%- gettext("完成时间") %> </th>
+                        <th class="attempt-status"><%- gettext("状态") %> </th>
+                        <th class="attempt-ready-to-resume"><%- gettext("准备继续") %> </th>
+                        <th class="c_action"><%- gettext("操作") %> </th>
                     </tr>
                 </thead>
                 <% if (is_proctored_attempts) { %>
@@ -219,15 +219,15 @@
                                                 <span class="fa fa-cog" aria-hidden="true"></span>
                                             </button>
                                             <div class="actions-dropdown" id="actions-dropdown-<%= dashboard_index %>" tabindex="-1">
-                                                <ul class="actions-dropdown-list" id="actions-dropdown-list-<%= dashboard_index %>" aria-label="<%- gettext("Available Actions") %>" role="menu">
+                                                <ul class="actions-dropdown-list" id="actions-dropdown-list-<%= dashboard_index %>" aria-label="<%- gettext("可执行的操作") %>" role="menu">
                                                     <li class="actions-item" role="menuitem">
                                                         <a href="#" class="action resume-attempt" data-attempt-id="<%= proctored_exam_attempt.id %>" data-user-id="<%= proctored_exam_attempt.user.id %>" >
-                                                            <%- gettext("Resume") %>
+                                                            <%- gettext("重置") %>
                                                         </a>
                                                     </li>
                                                     <li class="actions-item" role="menuitem">
                                                         <a href="#" class="action remove-attempt" data-attempt-id="<%= proctored_exam_attempt.id %>" data-user-id="<%= proctored_exam_attempt.user.id %>" data-exam-id="<%= proctored_exam_attempt.proctored_exam.id %>" >
-                                                            <%- gettext("Reset") %>
+                                                            <%- gettext("重置") %>
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -235,7 +235,7 @@
                                         </div>
                                     <% } else { %>
                                         <a href="#" class="action remove-attempt" data-attempt-id="<%= proctored_exam_attempt.id %>" data-user-id="<%= proctored_exam_attempt.user.id %>" data-exam-id="<%= proctored_exam_attempt.proctored_exam.id %>" >
-                                            <%- gettext("Reset") %>
+                                            <%- gettext("重置") %>
                                         </a>
                                     <% } %>
                                 <% } else { %>

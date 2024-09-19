@@ -1,6 +1,6 @@
-<span class="tip"> <%- gettext("Allowances") %>
+<span class="tip"> <%- gettext("额外时间") %>
     <span>
-        <a id="add-allowance" href="#"  class="add blue-button">+ <%- gettext("Add Allowance") %></a>
+        <a id="add-allowance" href="#"  class="add blue-button">+ <%- gettext("新增额外时间") %></a>
     </span>
 </span>
 <% var is_allowances = proctored_exam_allowances.length !== 0 %>
@@ -16,11 +16,11 @@
                 <table class="allowance-table" id="<%=generateDomId(student[0].user.username) %>" style="display:none;">
                     <tbody>
                         <tr class="allowance-headings">
-                            <th class="exam-name"><%- gettext("Exam Name") %></th>
-                            <th class="email"><%- gettext("Email") %></th>
-                            <th class="allowance-name"><%- gettext("Allowance Type") %> </th>
-                            <th class="allowance-value"><%- gettext("Allowance Value") %></th>
-                            <th class="c_action"><%- gettext("Actions") %> </th>
+                            <th class="exam-name"><%- gettext("考试名称") %></th>
+                            <th class="email"><%- gettext("邮箱") %></th>
+                            <th class="allowance-name"><%- gettext("额外时间类型") %> </th>
+                            <th class="allowance-value"><%- gettext("额外时间") %></th>
+                            <th class="c_action"><%- gettext("操作") %> </th>
                         </tr>
                     <% _.each(student, function(proctored_exam_allowance){ %>
                             <% var key = proctored_exam_allowance.key; %>

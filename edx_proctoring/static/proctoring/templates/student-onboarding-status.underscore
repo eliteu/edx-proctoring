@@ -47,7 +47,7 @@
                         <div aria-live="polite" aria-relevant="all">
                             <div id="onboarding-loading-indicator" class="hidden">
                                 <span class="icon fa fa-spinner fa-pulse" aria-hidden="true"></span>
-                                <span class="sr"><%- gettext("Loading") %></span>
+                                <span class="sr"><%- gettext("加载中") %></span>
                             </div>
                         </div>
                     </span>
@@ -113,10 +113,10 @@
             <table class="onboarding-status-table">
                 <thead>
                     <tr class="onboarding-status-headings">
-                        <th class="username-heading"><%- gettext("Username") %></th>
-                        <th class="enrollment-mode-heading"><%- gettext("Enrollment Mode") %></th>
-                        <th class="onboarding-status-heading"><%- gettext("Onboarding Status") %></th>
-                        <th class="last-updated-heading"><%- gettext("Last Modified") %> </th>
+                        <th class="username-heading"><%- gettext("用户名") %></th>
+                        <th class="enrollment-mode-heading"><%- gettext("注册模式") %></th>
+                        <th class="onboarding-status-heading"><%- gettext("入职状态") %></th>
+                        <th class="last-updated-heading"><%- gettext("最后更新") %> </th>
                     </tr>
                 </thead>
                 <% if (isOnboardingItems) { %>
