@@ -219,7 +219,7 @@ describe('ProctoredExamAttemptView', function() {
         '<div aria-live="polite" aria-relevant="all">' +
         '<div id="attempt-loading-indicator" class="hidden">' +
         '<span class="icon fa fa-spinner fa-pulse" aria-hidden="true"></span>' +
-        '<span class="sr"><%- gettext("Loading") %></span>' +
+        '<span class="sr"><%- gettext("加载中") %></span>' +
         '</div>' +
         '</div>' +
         '</span>' +
@@ -248,13 +248,13 @@ describe('ProctoredExamAttemptView', function() {
         '" > <span aria-hidden="true">&raquo;</span></a> </li> <% }%> </ul><div class="clearfix"></div></div>' +
         '<table class="exam-attempts-table"> <thead><tr class="exam-attempt-headings">' +
         '<th class="more"></th>' +
-        '<th class="username">Username</th>' +
-        '<th class="exam-name">Exam Name</th>' +
-        '<th class="attempt-allowed-time">Allowed Time (Minutes)</th>' +
-        '<th class="attempt-started-at">Started At</th>' +
-        '<th class="attempt-completed-at">Completed At</th>' +
-        '<th class="attempt-status">Status</th>' +
-        '<th class="attempt-ready-to-resume"><%- gettext("Ready to Resume") %> </th>' +
+        '<th class="username">用户名</th>' +
+        '<th class="exam-name">考试名称</th>' +
+        '<th class="attempt-allowed-time">时间限制（分钟）</th>' +
+        '<th class="attempt-started-at">开始时间</th>' +
+        '<th class="attempt-completed-at">完成时间</th>' +
+        '<th class="attempt-status">状态</th>' +
+        '<th class="attempt-ready-to-resume"><%- gettext("继续") %> </th>' +
         '<th class="c_action">Actions</th>' +
         '</tr></thead>' +
         '<% if (is_proctored_attempts) { %>\n' +
@@ -318,18 +318,18 @@ describe('ProctoredExamAttemptView', function() {
         '</button>' +
         '<div class="actions-dropdown" id="actions-dropdown-<%= dashboard_index %>" tabindex="-1">' +
         '<ul class="actions-dropdown-list" id="actions-dropdown-list-<%= dashboard_index %>" ' +
-        'aria-label="<%- gettext("Available Actions") %>" role="menu">' +
+        'aria-label="<%- gettext("可用操作") %>" role="menu">' +
         '<li class="actions-item" role="menuitem">' +
         '<a href="#" class="action resume-attempt" data-attempt-id="<%= proctored_exam_attempt.id %>" ' +
         'data-user-id="<%= proctored_exam_attempt.user.id %>" >' +
-        '<%- gettext("Resume") %>' +
+        '<%- gettext("继续") %>' +
         '</a>' +
         '</li>' +
         '<li class="actions-item" role="menuitem">' +
         '<a href="#" class="action remove-attempt" data-attempt-id="<%= proctored_exam_attempt.id %>" ' +
         'data-user-id="<%= proctored_exam_attempt.user.id %>" ' +
         'data-exam-id="<%= proctored_exam_attempt.proctored_exam.id %>" >' +
-        '<%- gettext("Reset") %>' +
+        '<%- gettext("重置") %>' +
         '</a>' +
         '</li>' +
         '</ul>' +
@@ -339,7 +339,7 @@ describe('ProctoredExamAttemptView', function() {
         '<a href="#" class="action remove-attempt" data-attempt-id="<%= proctored_exam_attempt.id %>" ' +
         'data-user-id="<%= proctored_exam_attempt.user.id %>" ' +
         'data-exam-id="<%= proctored_exam_attempt.proctored_exam.id %>" >' +
-        '<%- gettext("Reset") %>' +
+        '<%- gettext("重置") %>' +
         '</a>' +
         '<% } %>' +
         '<% } else { %>' +
@@ -373,7 +373,7 @@ describe('ProctoredExamAttemptView', function() {
         '</tbody> <% }%> <% }); %> <% } %>' +
         '</table>' +
         '<% if (!is_proctored_attempts) { %>' +
-        '<p> No exam results found. </p>' +
+        '<p> 未找到考试结果。</p>' +
         '<% } %>' +
         '</div>' +
         '</div>';

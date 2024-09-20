@@ -52,7 +52,7 @@ describe('ProctoredExamOnboardingView', function() {
         '<div class="content onboarding-status-content">' +
         '<div class="top-header">' +
         '<div class="search-onboarding">' +
-        '<input type="text" id="search_onboarding_id" placeholder="e.g johndoe or john.doe@gmail.com"' +
+        '<input type="text" id="search_onboarding_id" placeholder="例如：test 或 test@eliteu.cn"' +
         '<% if (inSearchMode) { %>' +
         'value="<%= searchText %>"' +
         '<%} %>' +
@@ -62,7 +62,7 @@ describe('ProctoredExamOnboardingView', function() {
         '<div aria-live="polite" aria-relevant="all">' +
         '<div id="onboarding-loading-indicator" class="hidden">' +
         '<span class="icon fa fa-spinner fa-pulse" aria-hidden="true"></span>' +
-        '<span class="sr"><%- gettext("Loading") %></span>' +
+        '<span class="sr"><%- gettext("加载中") %></span>' +
         '</div>' +
         '</div>' +
         '</span>' +

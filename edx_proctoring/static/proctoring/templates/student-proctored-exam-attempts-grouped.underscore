@@ -62,7 +62,7 @@
         <div class="content exam-attempts-content">
             <div class="top-header">
                 <div class="search-attempts">
-                    <input type="text" id="search_attempt_id" placeholder="e.g johndoe or john.doe@gmail.com"
+                    <input type="text" id="search_attempt_id" placeholder="例如：test 或 test@eliteu.cn"
                     <% if (inSearchMode) { %>
                         value="<%= searchText %>"
                     <%} %>
@@ -280,7 +280,7 @@
                 <% } %>
             </table>
             <% if (!is_proctored_attempts) { %>
-                <p> No exam results found. </p>
+                <p> 未找到考试结果。</p>
             <% } %>
 
         </div>
