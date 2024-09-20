@@ -41,7 +41,7 @@ edx = edx || {};
         $('#accessible-error-modal .message-title').html(message);
         $('#accessible-error-modal #acessible-error-title').html(title);
         $('#accessible-error-modal .ok-button')
-            .html(gettext('OK'))
+            .html(gettext('确定'))
             .off('click.closeModal')
             .on('click.closeModal', function() {
                 $('#accessible-error-modal .close-modal').click();
@@ -127,10 +127,10 @@ edx = edx || {};
             .then(reloadPage)
             .catch(errorHandlerGivenMessage(
                 $this,
-                gettext('Error Ending Exam'),
+                gettext('结束考试错误'),
                 gettext(
-                    'Something has gone wrong ending your exam. ' +
-                    'Please reload the page and start again.'
+                    '结束考试时出现问题。' +
+                    '请重新加载页面并再次开始。'
                 )
             ));
     };
@@ -156,10 +156,10 @@ edx = edx || {};
                 .then(reloadPage)
                 .catch(errorHandlerGivenMessage(
                     $this,
-                    gettext('Error Starting Exam'),
+                    gettext('开始考试错误'),
                     gettext(
-                        'Something has gone wrong starting your exam. ' +
-            'Please double-check that the application is running.'
+                        '开始考试时出现问题。' +
+            '请检查应用程序是否正在运行。'
                     )
                 ));
         } else {
@@ -167,10 +167,10 @@ edx = edx || {};
                 .then(reloadPage)
                 .catch(errorHandlerGivenMessage(
                     $this,
-                    gettext('Error Starting Exam'),
+                    gettext('开始考试错误'),
                     gettext(
-                        'Something has gone wrong starting your exam. ' +
-            'Please reload the page and start again.'
+                        '开始考试时出现问题。' +
+            '请重新加载页面并再次开始。'
                     )
                 ));
         }
@@ -192,10 +192,10 @@ edx = edx || {};
                 .then(reloadPage)
                 .catch(errorHandlerGivenMessage(
                     $this,
-                    gettext('Error Ending Exam'),
+                    gettext('结束考试错误'),
                     gettext(
-                        'Something has gone wrong ending your exam. ' +
-                        'Please double-check that the application is running.'
+                        '结束考试时出现问题。' +
+                        '请检查应用程序是否正在运行。'
                     )
                 ));
         } else {
@@ -203,10 +203,10 @@ edx = edx || {};
                 .then(reloadPage)
                 .catch(errorHandlerGivenMessage(
                     $this,
-                    gettext('Error Ending Exam'),
+                    gettext('结束考试错误'),
                     gettext(
-                        'Something has gone wrong ending your exam. ' +
-            'Please reload the page and start again.'
+                        '结束考试时出现问题。' +
+            '请重新加载页面并再次开始。'
                     )
                 ));
         }

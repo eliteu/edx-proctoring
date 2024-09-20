@@ -115,7 +115,7 @@ edx = edx || {};
 
             if (allowanceValue === '') {
                 formHasErrors = true;
-                self.showError(self, 'allowance_value', gettext('Required field'));
+                self.showError(self, 'allowance_value', gettext('必填字段'));
             } else {
                 self.hideError(self, 'allowance_value');
             }

@@ -9,9 +9,9 @@ edx = edx || {};
     edx.instructor_dashboard.proctoring.ProctoredExamAllowanceView = Backbone.View.extend({
         initialize: function() {
             this.allowance_types = [
-                ['additional_time_granted', gettext('Additional Time (minutes)')],
-                ['review_policy_exception', gettext('Review Policy Exception')],
-                ['time_multiplier', gettext('Time Multiplier')]
+                ['additional_time_granted', gettext('额外时间（分钟）')],
+                ['review_policy_exception', gettext('审核政策例外')],
+                ['time_multiplier', gettext('时间倍率')]
             ];
 
             this.collection = new edx.instructor_dashboard.proctoring.ProctoredExamAllowanceCollection();

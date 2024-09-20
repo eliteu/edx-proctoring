@@ -150,8 +150,8 @@ edx = edx || {};
             location.reload();
         },
         unloadMessage: function() {
-            return gettext('Are you sure you want to leave this page? \n' +
-                'To pass your proctored exam you must also pass the online proctoring session review.');
+            return gettext('您确定要离开此页面吗？\n' +
+                '要通过您的监考考试，您还必须通过在线监考会话的审核。');
         },
         updateRemainingTime: function() {
             var url, queryString, newState;

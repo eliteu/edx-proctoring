@@ -115,7 +115,7 @@
       var action = $(this).data('action');
 
       var msg = gettext(
-        "Are you sure you want to take this exam without proctoring?"
+        "您确定要在没有监考的情况下参加这次考试吗？"
       );
       if (!confirm(msg)) {
         return;
@@ -162,8 +162,8 @@
    var newWindow = window.open("{{software_download_url|safe}}", "_blank");
    if (!newWindow) {
      edx.courseware.proctored_exam.accessibleError(
-       gettext("Please Allow Pop-ups"),
-       gettext('Enable pop-ups in both your browser settings and/or any browser extensions and then click "Start System Check" again to proceed.')
+       gettext("请允许弹出窗口"),
+       gettext('在浏览器设置和/或浏览器扩展中启用弹出窗口，然后再次单击“开始系统检查”以继续。')
      );
    }
    $.ajax({
@@ -185,8 +185,8 @@
       // The proctoring setup is not yet complete.
       // Show a modal indicating that the user is not done yet.
       edx.courseware.proctored_exam.accessibleError(
-        gettext("Cannot Start Proctored Exam"),
-        gettext("You must complete the proctoring setup before you can start the exam.")
+        gettext("无法开始监考考试"),
+        gettext("您必须完成监考设置后才能开始考试。")
       );
       setPrimacyOfButtons(true);
     });
@@ -198,8 +198,8 @@
       // The proctoring setup is complete.
       // Show a modal indicating that the user is ready to proceed.
       edx.courseware.proctored_exam.accessibleError(
-        gettext("System Check Succeeded"),
-        gettext('Click "Start Proctored Exam" to proceed.')
+        gettext("系统检查成功"),
+        gettext('点击「开始监考考试」以继续。')
       );
       setPrimacyOfButtons(false);
     }, launchSystemCheck);
@@ -215,13 +215,13 @@
     var examCode = $('.proctored-exam-code');
     examCode.select();
     document.execCommand('copy');
-    $(this).text(gettext("Copied"));
+    $(this).text(gettext("已复制"));
 
     // selecting the exam code moves focus to it, so move it back to the button
     // this will also read out "Copied" for screenreaders
     $(this).focus();
   })
   .blur(function () {
-    $(this).text(gettext("Copy Exam Code"));
+    $(this).text(gettext("复制考试代码"));
   });
 </script>

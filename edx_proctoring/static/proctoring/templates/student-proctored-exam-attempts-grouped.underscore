@@ -154,7 +154,7 @@
                         <th class="attempt-started-at"><%- gettext("开始时间") %></th>
                         <th class="attempt-completed-at"><%- gettext("完成时间") %> </th>
                         <th class="attempt-status"><%- gettext("状态") %> </th>
-                        <th class="attempt-ready-to-resume"><%- gettext("准备继续") %> </th>
+                        <th class="attempt-ready-to-resume"><%- gettext("继续") %> </th>
                         <th class="c_action"><%- gettext("操作") %> </th>
                     </tr>
                 </thead>

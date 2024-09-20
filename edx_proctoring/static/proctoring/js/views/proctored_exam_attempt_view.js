@@ -7,28 +7,43 @@ edx = edx || {};
     edx.instructor_dashboard = edx.instructor_dashboard || {};
     edx.instructor_dashboard.proctoring = edx.instructor_dashboard.proctoring || {};
     examStatusReadableFormat = {
-        eligible: gettext('Eligible'),
-        created: gettext('Created'),
-        download_software_clicked: gettext('Download Software Clicked'),
-        ready_to_start: gettext('Ready to start'),
-        started: gettext('Started'),
-        ready_to_submit: gettext('Ready to submit'),
-        declined: gettext('Declined'),
-        timed_out: gettext('Timed out'),
-        second_review_required: gettext('Second Review Required'),
-        submitted: gettext('Submitted'),
-        verified: gettext('Verified'),
-        rejected: gettext('Rejected'),
-        error: gettext('Error'),
-        onboarding_missing: gettext('Onboarding Missing'),
-        onboarding_pending: gettext('Onboarding Pending'),
-        onboarding_failed: gettext('Onboarding Failed'),
-        onboarding_expired: gettext('Onboarding Expired')
+        eligible: gettext('符合条件'),
+        created: gettext('已创建'),
+        download_software_clicked: gettext('已点击下载软件'),
+        ready_to_start: gettext('准备开始'),
+        started: gettext('已开始'),
+        ready_to_submit: gettext('准备提交'),
+        declined: gettext('已拒绝'),
+        timed_out: gettext('已超时'),
+        second_review_required: gettext('需要二次审核'),
+        submitted: gettext('已提交'),
+        verified: gettext('已验证'),
+        rejected: gettext('已拒绝'),
+        error: gettext('错误'),
+        onboarding_missing: gettext('缺少入职流程'),
+        onboarding_pending: gettext('入职流程待定'),
+        onboarding_failed: gettext('入职流程失败'),
+        onboarding_expired: gettext('入职流程已过期')
     };
     viewHelper = {
+        // getDateFormat: function(date) {
+        //     if (date) {
+        //         return new Date(date).toString('MMM dd, yyyy h:mmtt');
+        //     } else {
+        //         return '---';
+        //     }
+        // },
         getDateFormat: function(date) {
             if (date) {
-                return new Date(date).toString('MMM dd, yyyy h:mmtt');
+                const options = {
+                    year: 'numeric',
+                    month: 'long', // 'long' 会返回完整的月份名称，如“九月”
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    hour12: false  // 24小时制
+                };
+                return new Date(date).toLocaleDateString('zh-CN', options) + ' ' + new Date(date).toLocaleTimeString('zh-CN', options);
             } else {
                 return '---';
             }
@@ -176,9 +191,9 @@ edx = edx || {};
                 dataJson.proctored_exam_attempts.forEach(function(proctoredExamAttempt, i) {
                     var isProctored = proctoredExamAttempt.proctored_exam.is_proctored;
                     var isPractice = proctoredExamAttempt.proctored_exam.is_practice_exam;
-                    var proctoredText = isPractice ? gettext('Practice') : gettext('Proctored');
+                    var proctoredText = isPractice ? gettext('练习') : gettext('监考');
                     // eslint-disable-next-line no-param-reassign
-                    proctoredExamAttempt.exam_attempt_type = !isProctored ? gettext('Timed') : proctoredText;
+                    proctoredExamAttempt.exam_attempt_type = !isProctored ? gettext('计时') : proctoredText;
 
                     // current CSS selectors do not allow the selection of nth-child for a class selector,
                     // so we are determining a class used for CSS styling here
@@ -211,7 +226,7 @@ edx = edx || {};
 
             // confirm the user's intent
             // eslint-disable-next-line no-alert
-            if (!confirm(gettext('Are you sure you want to remove this student\'s exam attempt?'))) {
+            if (!confirm(gettext('您确定要删除该学生的考试尝试吗?'))) {
                 return;
             }
             $('body').css('cursor', 'wait');
@@ -245,7 +260,7 @@ edx = edx || {};
 
             // confirm the user's intent
             // eslint-disable-next-line no-alert
-            if (!confirm(gettext('Are you sure you want to resume this student\'s exam attempt?'))) {
+            if (!confirm(gettext('您确定要恢复该学生的考试尝试吗？'))) {
                 return;
             }
             $('body').css('cursor', 'wait');

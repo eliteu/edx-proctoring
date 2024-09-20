@@ -212,7 +212,7 @@ describe('ProctoredExamAttemptView', function() {
         '<div class="content exam-attempts-content">' +
         '<div class="top-header">' +
         '<div class="search-attempts">' +
-        '<input type="text" id="search_attempt_id" placeholder="e.g johndoe or john.doe@gmail.com"' +
+        '<input type="text" id="search_attempt_id" placeholder="例如：test 或 test@eliteu.cn"' +
         '<% if (inSearchMode) { %> value="<%= searchText %>" <%} %> /> ' +
         '<span class="search">' +
         '<span class="icon fa fa-search" id="attempt-search-indicator" aria-hidden="true"></span>' +

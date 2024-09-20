@@ -45,7 +45,7 @@
         <tr>
             <td></td>
             <td>
-                <input id='editAllowance' type='submit' value='Save' />
+                <input id='editAllowance' type='submit' value='保存' />
             </td>
         </tr>
     </table>

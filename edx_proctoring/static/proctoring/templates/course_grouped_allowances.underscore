@@ -54,11 +54,11 @@
                             data-key-value="<%= proctored_exam_allowance.key_display_name %>"
                             data-user-name="<%= proctored_exam_allowance.user.username %>"
                             data-exam-name="<%= proctored_exam_allowance.proctored_exam.exam_name %>"
-                        class="edit_allowance" href="#">Edit</a>
+                        class="edit_allowance" href="#">编辑</a>
                         <a data-exam-id="<%= proctored_exam_allowance.proctored_exam.id %>"
                             data-key-name="<%= proctored_exam_allowance.key %>"
                             data-user-id="<%= proctored_exam_allowance.user.id %>"
-                        class="remove_allowance" href="#">Delete</a>
+                        class="remove_allowance" href="#">删除</a>
                         </td>
                         </tr>
                     <% }); %>

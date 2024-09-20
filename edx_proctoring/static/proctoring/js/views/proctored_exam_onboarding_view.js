@@ -26,31 +26,46 @@ edx = edx || {};
     ];
     statusAndModeReadableFormat = {
         // Onboarding statuses
-        not_started: gettext('Not Started'),
-        setup_started: gettext('Setup Started'),
-        onboarding_started: gettext('Onboarding Started'),
-        other_course_approved: gettext('Approved in Another Course'),
-        started: gettext('Started'),
-        submitted: gettext('Submitted'),
-        verified: gettext('Verified'),
-        rejected: gettext('Rejected'),
-        error: gettext('Error'),
-        expired: gettext('Expired'),
+        not_started: gettext('未开始'),
+        setup_started: gettext('设置已开始'),
+        onboarding_started: gettext('入职已开始'),
+        other_course_approved: gettext('已在其他课程中通过'),
+        started: gettext('已开始'),
+        submitted: gettext('已提交'),
+        verified: gettext('已验证'),
+        rejected: gettext('已拒绝'),
+        error: gettext('错误'),
+        expired: gettext('已过期'),
         // TODO: remove as part of MST-745
-        onboarding_reset_past_due: gettext('Onboarding Reset Failed Due to Past Due Exam'),
+        onboarding_reset_past_due: gettext('由于考试过期，入职重置失败'),
         // Enrollment modes (Note: 'verified' is both a status and enrollment mode)
-        audit: gettext('Audit'),
-        honor: gettext('Honor'),
-        professional: gettext('Professional'),
-        'no-id-professional': gettext('No ID Professional'),
-        credit: gettext('Credit'),
-        masters: gettext('Master\'s'),
-        'executive-education': gettext('Executive Education')
+        audit: gettext('旁听'),
+        honor: gettext('荣誉'),
+        professional: gettext('专业'),
+        'no-id-professional': gettext('无身份验证专业课程'),
+        credit: gettext('学分'),
+        masters: gettext('硕士'),
+        'executive-education': gettext('高管教育课程')
     };
     viewHelper = {
+        // getDateFormat: function(date) {
+        //     if (date) {
+        //         return new Date(date).toString('MMM dd, yyyy h:mmtt');
+        //     } else {
+        //         return '---';
+        //     }
+        // },
         getDateFormat: function(date) {
             if (date) {
-                return new Date(date).toString('MMM dd, yyyy h:mmtt');
+                const options = {
+                    year: 'numeric',
+                    month: 'long', // 'long' 会返回完整的月份名称，如“九月”
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    hour12: false  // 24小时制
+                };
+                return new Date(date).toLocaleDateString('zh-CN', options) + ' ' + new Date(date).toLocaleTimeString('zh-CN', options);
             } else {
                 return '---';
             }

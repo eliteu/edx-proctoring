@@ -215,17 +215,17 @@ edx = edx || {};
             } else {
                 $('#proctored_exam').show();
                 $('#timed_exam').hide();
-                $('#allowance_type').append(new Option(gettext('Review Policy Exception'), 'review_policy_exception'));
+                $('#allowance_type').append(new Option(gettext('审核政策例外'), 'review_policy_exception'));
             }
             this.updateAllowanceLabels($('#allowance_type').val());
         },
         updateAllowanceLabels: function(selectedAllowanceType) {
             if (selectedAllowanceType === 'additional_time_granted') {
-                $('#allowance_value_label').text(gettext('Add Time(Minutes)'));
+                $('#allowance_value_label').text(gettext('添加时间（分钟）'));
             } else if (selectedAllowanceType === 'time_multiplier') {
-                $('#allowance_value_label').text(gettext('Add Multiplier as a Number Greater Than 1'));
+                $('#allowance_value_label').text(gettext('添加大于 1 的倍率'));
             } else {
-                $('#allowance_value_label').text(gettext('Add Policy Exception'));
+                $('#allowance_value_label').text(gettext('添加政策例外'));
             }
         },
         sortExamsByExamType: function() {
@@ -265,7 +265,7 @@ edx = edx || {};
             $.each(formValues, function(key, value) {
                 if (value === '') {
                     formHasErrors = true;
-                    self.showError(self, key, gettext('Required field'));
+                    self.showError(self, key, gettext('必填字段'));
                 } else {
                     self.hideError(self, key);
                 }
@@ -273,7 +273,7 @@ edx = edx || {};
 
             if (examIdCollection === '') {
                 formHasErrors = true;
-                self.showError(self, 'proctored_exam', gettext('Required field'));
+                self.showError(self, 'proctored_exam', gettext('必填字段'));
             } else {
                 self.hideError(self, 'proctored_exam');
             }

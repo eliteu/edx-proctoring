@@ -56,7 +56,7 @@
                     <% }); %>
                 </select>
                 <select multiple id='timed_exam' class="exam_dropdown" style="display:none;">
-                    <option hidden selected value=default> <%- gettext("Choose Exams Below") %> </option>
+                    <option hidden selected value=default> <%- gettext("选择以下考试") %> </option>
                     <% _.each(timed_exams, function(timed_exam){ %>
                     <option value="<%= timed_exam.id  %>">
                     <%- interpolate(gettext(' %(exam_display_name)s '), { exam_display_name: timed_exam.exam_name }, true) %>
@@ -98,7 +98,7 @@
         </tr>
         <tr>
             <td>
-                <input id='addNewAllowance' type='submit' value='Create Allowance' />
+                <input id='addNewAllowance' type='submit' value='创建额外时间' />
             </td>
         </tr>
     </table>

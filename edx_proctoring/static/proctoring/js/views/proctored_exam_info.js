@@ -10,16 +10,16 @@
     edx.courseware.proctored_exam = edx.courseware.proctored_exam || {};
 
     notStartedText = {
-        status: gettext('Not Started'),
-        message: gettext('You have not started your onboarding exam.')
+        status: gettext('未开始'),
+        message: gettext('您尚未开始入职考试。')
     };
     startedText = {
-        status: gettext('Started'),
-        message: gettext('You have started your onboarding exam.')
+        status: gettext('已开始'),
+        message: gettext('您已开始入职考试。')
     };
     submittedText = {
-        status: gettext('Submitted'),
-        message: gettext('You have submitted your onboarding exam.')
+        status: gettext('已提交'),
+        message: gettext('您已提交入职考试。')
     };
 
     examStatusReadableFormat = {
@@ -31,40 +31,38 @@
         second_review_required: submittedText,
         submitted: submittedText,
         verified: {
-            status: gettext('Verified'),
-            message: gettext('Your onboarding exam has been approved in this course.')
+            status: gettext('已验证'),
+            message: gettext('您的入职考试已通过本课程的审核。')
         },
         rejected: {
-            status: gettext('Rejected'),
-            message: gettext('Your onboarding exam has been rejected. Please retry onboarding.')
+            status: gettext('已拒绝'),
+            message: gettext('您的入职考试已被拒绝。请重新进行入职考试。')
         },
         error: {
-            status: gettext('Error'),
-            message: gettext('An error has occurred during your onboarding exam. Please retry onboarding.')
+            status: gettext('错误'),
+            message: gettext('入职考试过程中发生错误。请重新进行入职考试。')
         },
         other_course_approved: {
-            status: gettext('Approved in Another Course'),
-            message: gettext('Your onboarding exam has been approved in another course.'),
+            status: gettext('已在其他课程中通过'),
+            message: gettext('您的入职考试已在另一门课程中通过。'),
             detail: gettext(
-                'If your device has changed, we recommend that you complete this ' +
-                'course\'s onboarding exam in order to ensure that your setup ' +
-                'still meets the requirements for proctoring.'
+                '如果您的设备发生了更改，我们建议您完成本课程的入职考试，' +
+                '以确保您的设备设置仍符合监考要求。'
             )
         },
         expiring_soon: {
-            status: gettext('Expiring Soon'),
+            status: gettext('即将过期'),
             message: gettext(
-                'Your onboarding profile has been approved. ' +
-                'However, your onboarding status is expiring soon. Please ' +
-                'complete onboarding again to ensure that you will be ' +
-                'able to continue taking proctored exams.'
+                '您的入职资料已通过审核。' +
+                '但是，您的入职状态即将过期。请再次完成入职考试，' +
+                '以确保您能够继续参加监考考试。'
             )
         },
         expired: {
-            status: gettext('Expired'),
+            status: gettext('已过期'),
             message: gettext(
-                'Your onboarding status has expired. Please ' +
-                'complete onboarding again to continue taking proctored exams.'
+                '您的入职状态已过期。请再次完成入职考试，' +
+                '以继续参加监考考试。'
             )
         }
     };
